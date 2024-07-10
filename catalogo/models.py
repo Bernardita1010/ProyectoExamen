@@ -17,6 +17,7 @@ class Libro(models.Model):
     titulo = models.CharField(max_length=100)
     anio_publicacion = models.IntegerField()
     descripcion = models.TextField()
+    urlImg = models.URLField()
     id_autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name='libros')
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='libros')
 

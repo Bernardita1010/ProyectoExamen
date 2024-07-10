@@ -12,15 +12,20 @@ def home(request):
 
 def catalogoAutor(request):
     Navbars = NavBar.objects.all()
+    Autores = Autor.objects.all()
     context = {
-        "Navbars": Navbars
+        "Navbars": Navbars,
+        "Autores": Autores
+        
     }  
     return render (request, 'catalogo/catalogoAutor.html', context)
 
 def catalogoLibro(request):
     Navbars = NavBar.objects.all()
+    Libros = Libro.objects.all()
     context = {
-        "Navbars": Navbars
+        "Navbars": Navbars,
+        "Libros": Libros
     }  
     return render (request, 'catalogo/catalogoLibro.html', context)
 
@@ -30,3 +35,13 @@ def categoria(request):
         "Navbars": Navbars
     } 
     return render (request, 'catalogo/categoria.html', context)
+
+def verMas(request):
+    Navbars = NavBar.objects.all()
+    Libros = Libro.objects.all()
+    context = {
+        "Navbars": Navbars,
+        "Libros": Libros
+    } 
+    return render (request, 'catalogo/verMas.html', context)
+
