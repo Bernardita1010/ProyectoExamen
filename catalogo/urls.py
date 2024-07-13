@@ -7,5 +7,6 @@ urlpatterns = [
             path('catalogo-autor', views.catalogoAutor, name="catalogoAutor"),
             path('catalogo-libro', views.catalogoLibro, name= "catalogoLibro"),
             path('categoria', views.categoria, name="categoria"),
-            path('verMas', views.verMas, name="verMas")
+            path('masInfo/', views.masInfo, name="masInfo"),
+            path('buscar_categoria/', views.buscar_categoria, name='buscar_categoria')
 		]

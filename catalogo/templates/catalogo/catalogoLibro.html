@@ -32,7 +32,7 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">Imagen Libro</th>
+                            <th scope="col">Imagen Libro</th>                                                   
                             <th scope="col">Titulo</th>
                             <th scope="col">Más Información</th>
                             
@@ -43,7 +43,7 @@
                         <tr>
                             <th scope="row"><img src="{{Libro.urlImg}}" alt="miniatura libro" style="width: 70px;height: 70px;"></th>
                             <td>{{Libro.titulo}}</td>
-                            <td><button id="verMas" class="btn btn-primary"> <a href="/catalogo/verMas" style="color: white;">Ver Más</a></button></td>
+                            <td><a href="#" class="btn btn-primary btn-info" data-id="{{Libro.id_libro}}">descripción</a></td>
                         </tr>
                             {% endfor %}
                         </tbody>
@@ -61,6 +61,12 @@
 <script>
     $(document).ready(function() {
         AOS.init();
+
+        $('.btn-info').on('click', function(a){
+          a.preventDefault();
+          var libroId = $(this).data('id');
+          window.location.href = `/masInfo/?id_libro=${libroId}`;
+        });
     });    
   </script>
 </body>
